@@ -15,11 +15,11 @@
 1. Create neovim config folder 
     ```bash 
         mkdir -p ~/.config/nvim
-    ```.
+    ```
 2. Clone repo into neovim config folder 
     ```bash
         git clone --depth=1 https://github.com/Benson003/my_neovim_config.git ~/.config/nvim/
-    ```.
+    ```
 3. Run the setup script 
     ```bash
 
