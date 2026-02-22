@@ -11,6 +11,16 @@ return {
             local telescope = require("telescope")
             local actions = require("telescope.actions")
 
+            keys = {
+              { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (Ctrl+P)" },
+              { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Global)" },
+              { "<leader><leader>", "<cmd>Telescope buffers<cr>", desc = "Switch Buffers" },
+              { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Page" },
+              { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+              { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+              { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
+            },
+
             telescope.setup({
                 defaults = {
                     prompt_prefix = " ",
@@ -33,10 +43,12 @@ return {
                     },
                 },
                 pickers = {
-                    find_files = { theme = "dropdown" },
-                    live_grep = { theme = "ivy" },
-                    buffers = { theme = "dropdown", previewer = false },
-                    help_tags = { theme = "ivy" },
+                    find_files = { theme = "ivy", previewer = true },
+                    live_grep = { theme = "ivy", previewer = true },
+                    buffers = { theme = "ivy", previewer = true },
+                    help_tags = { theme = "ivy", previewer = true },
+                    git_commits = { theme = "ivy", previewer = true },
+                    git_status = { theme = "ivy", previewer = true },
                 },
                 extensions = {
                     fzf = {
@@ -53,11 +65,13 @@ return {
             -- Keymaps via legendary.nvim
             local legendary = require("legendary")
             legendary.keymaps({
-                { "<leader>ff", "<cmd>Telescope find_files<CR>", description = "Find File" },
-                { "<leader>fr", "<cmd>Telescope oldfiles<CR>",   description = "Recent Files" },
-                { "<leader>ft", "<cmd>Telescope live_grep<CR>",  description = "Find Text" },
-                { "<leader>fb", "<cmd>Telescope buffers<CR>",    description = "Buffers" },
-                { "<leader>fh", "<cmd>Telescope help_tags<CR>",  description = "Help" },
+                { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files (Ctrl+P)" },
+                { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search Text (Global)" },
+                { "<leader><leader>", "<cmd>Telescope buffers<cr>", desc = "Switch Buffers" },
+                { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Page" },
+                { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files" },
+                { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+                { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
             })
         end,
     },
