@@ -75,7 +75,7 @@ return {
             }
 
             mason_lspconfig.setup({
-                ensure_installed = { "lua_ls", "gopls", "rust_analyzer", "ts_ls", "zls" },
+                ensure_installed = { "lua_ls", "gopls", "rust_analyzer", "ts_ls", "zls","pyright","ruff" },
                 automatic_installation = true,
                 handlers = {
                     function(server_name)
@@ -129,7 +129,7 @@ return {
 			"nvimtools/none-ls.nvim",
 		},
 		opts = {
-			ensure_installed = { "stylua", "prettier", "black", "gofumpt" },
+			ensure_installed = { "stylua", "prettier", "black", "gofumpt","ruff" },
 			-- Set this to false to stop the "Package is already installing" race condition
 			automatic_installation = false,
 		},
