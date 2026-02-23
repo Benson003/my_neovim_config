@@ -6,7 +6,6 @@ return {
 		config = function()
 			require("toggleterm").setup({
 				size = 20,
-				open_mapping = [[<leader>t]],
 				hide_numbers = true,
 				shade_terminals = false, -- Turn this off if you want full color clarity
 				direction = "float",

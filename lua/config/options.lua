@@ -1,11 +1,26 @@
 local opt = vim.opt
+local api = vim.api
 
+
+api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.dart",
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
 opt.number = true
 opt.relativenumber = true
 opt.laststatus = 3
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = false
+
+opt.list = true
+vim.opt.listchars = { 
+  tab = '→ ',    -- Shows a tab as an arrow
+  trail = '·',   -- Shows trailing spaces at the end of a line as dots
+  nbsp = '␣',    -- Shows non-breaking spaces
+}
 
 opt.clipboard = "unnamedplus"
 opt.swapfile = false
