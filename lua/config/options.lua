@@ -7,6 +7,9 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 
+opt.clipboard = "unnamedplus"
+opt.swapfile = false
+
 opt.smartindent = true
 
 opt.termguicolors = true

@@ -1,5 +1,8 @@
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signatureHelp, { border = border })
+
 return {
-    
+
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
@@ -17,7 +20,7 @@ return {
             })
         end,
     },
-    
+
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = {
@@ -120,7 +123,7 @@ return {
             })
         end,
     },
-    
+
    	{
 		"jay-babu/mason-null-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
