@@ -1,7 +1,14 @@
-#!/bin/bash
-mkdir -p ~/.local/share/nvim/lazy
+#!/bin/bash 
+
+echo "Installing Lazy"
+
+mkdir -p ~/.local/share/nvim/lazy/
 git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable ~/.local/share/nvim/lazy/lazy.nvim
-npm install -g tree-sitter-cli
-pip install pynvim
-npm install -g neovim
+echo "Installing pynvim"
+pip install pynvim 
+echo "Installing gem 'neovim'" 
 gem install neovim
+
+echo "Installing tree-sitter-cli"
+npm install -g tree-sitter-cli neovim
+
