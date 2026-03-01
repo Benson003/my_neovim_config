@@ -16,17 +16,6 @@ return {
 	},
 
 	{
-		"sphamba/smear-cursor.nvim",
-		opts = {
-			cursor_color = "#7aa2f7",
-			stiffness = 0.8,
-			trailing_stiffness = 0.5,
-			trailing_exponent = 2.0,
-			excluded_filetypes = { "NvimTree", "TelescopePrompt", "noice" },
-		},
-	},
-
-	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {},
@@ -42,20 +31,6 @@ return {
 				under_cursor = true,
 			})
 		end,
-	},
-	{
-		"NvChad/nvim-colorizer.lua",
-		event = { "BufReadPost", "BufNewFile" },
-		opts = {
-			user_default_options = {
-				tailwind = true, -- If you use tailwind
-				mode = "background",
-				names = false,
-				RGB = true,
-				RRGGBB = true,
-				AARRGGBB = true,
-			},
-		},
 	},
 	{
 		"HiPhish/rainbow-delimiters.nvim",
@@ -86,7 +61,7 @@ return {
 						if vim.bo[bufnr].filetype == "alpha" then
 							return 0
 						end
-						return 30
+						return 3
 					end,
 				},
 				scope = {

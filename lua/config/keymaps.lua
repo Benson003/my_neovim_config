@@ -3,9 +3,8 @@ local map = vim.keymap.set
 -- Use silent = true to prevent the command line from flickering on every save
 local opt = { silent = true }
 
-
 map("n", "<leader>ft", function()
-    vim.lsp.buf.format()
+	vim.lsp.buf.format()
 end, { desc = "Format Dart" })
 
 map("n", "<leader>t", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
@@ -17,8 +16,8 @@ map("n", "<leader>x", "<cmd>x<cr>", opt)
 -- Clear search and refresh the screen (Useful for our 60FPS setup)
 map("n", "<leader>h", "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", opt)
 
-map("n", "<leader>h", ":split<CR>", opts)
-map("n", "<leader>j", ":vsplit<CR>", opts)
+map("n", "<A-h>", ":split<CR>", opts)
+map("n", "<A-j>", ":vsplit<CR>", opts)
 
 -- Window navigation
 map("n", "<C-h>", "<C-w>h", opt)
@@ -28,14 +27,12 @@ map("n", "<C-k>", "<C-w>k", opt)
 
 -- Arrow keys disabled
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>" }) do
-    map("n", key, ':echo "Use h/j/k/l instead"<CR>', opts)
+	map("n", key, ':echo "Use h/j/k/l instead"<CR>', opts)
 end
 
 for _, key in ipairs({ "<Up>", "<Down>", "<Left>", "<Right>" }) do
-    map("v", key, ':echo "Use h/j/k/l instead"<CR>', opts)
+	map("v", key, ':echo "Use h/j/k/l instead"<CR>', opts)
 end
-
-
 
 -- Snappy Indenting (Keeps you in visual mode while indenting)
 map("v", "<", "<gv")
@@ -48,3 +45,10 @@ map("v", "K", ":m '<-2<CR>gv=gv", opt)
 map("n", "<C-s>", ":wa<CR>", opts)
 map("n", "<C-q>", ":qa<CR>", opts)
 map("n", "qq", ":q<CR>", opts)
+
+-- Flutter specific mappings
+map("n", "<leader>fr", "<cmd>FlutterRun<cr>", { desc = "Flutter Run" })
+map("n", "<leader>fq", "<cmd>FlutterQuit<cr>", { desc = "Flutter Quit" })
+map("n", "<leader>fR", "<cmd>FlutterRestart<cr>", { desc = "Flutter Hot Restart" })
+map("n", "<leader>fd", "<cmd>FlutterDevices<cr>", { desc = "Select Flutter Device" })
+map("n", "<leader>fe", "<cmd>FlutterEmulators<cr>", { desc = "Select Flutter Emulator" })
